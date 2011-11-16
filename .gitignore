@@ -1,0 +1,12 @@
+META.yml
+Makefile
+Makefile.old
+MANIFEST.bak
+pm_to_blib
+blib
+*~
+.*
+local/
+config.yaml
+MYMETA.json
+MYMETA.yml
