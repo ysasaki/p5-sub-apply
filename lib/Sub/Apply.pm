@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use parent 'Exporter';
 
-our $VERSION   = '0.01';
+our $VERSION   = '0.02';
 our @EXPORT_OK = qw(apply apply_if);
 
 sub apply {
@@ -83,7 +83,7 @@ Yoshihiro Sasaki, E<lt>ysasaki at cpan.org<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2011 by ysasaki
+Copyright (C) 2011 by Yoshihiro Sasaki
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

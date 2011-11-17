@@ -1,5 +1,9 @@
 Revision history for Perl extension Sub::Apply.
 
+0.02  Thu Nov 17 11:07:48 2011
+    - use MIN_PERL_VERSION attribute instead of use $VERSION #1 (thanks to syohex)
+    - fix copyright
+
 0.01  Thu Nov 17 01:47:43 2011
 	- original version; created by h2xs 1.23 with options
 		-AXce --use-new-tests --skip-exporter --skip-ppport -v 0.01 -n Sub::Apply
