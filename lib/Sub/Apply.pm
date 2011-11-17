@@ -4,6 +4,7 @@ use 5.008008;
 use strict;
 use warnings;
 use parent 'Exporter';
+use Carp ();
 
 our $VERSION   = '0.02';
 our @EXPORT_OK = qw(apply apply_if);
@@ -12,7 +13,7 @@ sub apply {
     my $orig   = shift;
     my $caller = caller;
     my $proc   = _proc( $caller, $orig );
-    die "no such proc:$orig" unless $proc;
+    Carp::croak "No such proc $orig" unless $proc;
     $proc->(@_);
 }
 
