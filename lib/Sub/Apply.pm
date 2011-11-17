@@ -12,7 +12,7 @@ our @EXPORT_OK = qw(apply apply_if);
 sub apply {
     my $orig   = shift;
     my $caller = caller;
-    my $proc   = _proc( $caller, $orig );
+    my $proc   = _find_proc( $caller, $orig );
     Carp::croak "No such proc $orig" unless $proc;
     $proc->(@_);
 }
@@ -20,12 +20,12 @@ sub apply {
 sub apply_if {
     my $orig   = shift;
     my $caller = caller;
-    my $proc   = _proc( $caller, $orig );
+    my $proc   = _find_proc( $caller, $orig );
     return unless $proc;
     $proc->(@_);
 }
 
-sub _proc {
+sub _find_proc {
     my ( $caller, $proc ) = @_;
     ( my $package, $proc ) = $proc =~ m/^(?:(.+)::)?(.+)$/;
     $package ||= $caller;
