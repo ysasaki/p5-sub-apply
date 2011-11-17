@@ -1,5 +1,10 @@
 Revision history for Perl extension Sub::Apply.
 
+0.03  Thu Nov 17 23:47:22 2011
+    - use symbol table to test subroutine existence. #2 (thanks to Vincent)
+    - rename _proc to _find_proc.
+    - more friendly error message.
+
 0.02  Thu Nov 17 11:07:48 2011
     - use MIN_PERL_VERSION attribute instead of use $VERSION #1 (thanks to syohex)
     - fix copyright

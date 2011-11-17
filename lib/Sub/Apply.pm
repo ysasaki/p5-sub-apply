@@ -6,7 +6,7 @@ use warnings;
 use parent 'Exporter';
 use Carp ();
 
-our $VERSION   = '0.02';
+our $VERSION   = '0.03';
 our @EXPORT_OK = qw(apply apply_if);
 
 sub apply {
