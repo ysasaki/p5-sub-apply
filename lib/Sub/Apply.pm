@@ -27,8 +27,13 @@ sub apply_if {
 sub _proc {
     my ( $caller, $proc ) = @_;
     ( my $package, $proc ) = $proc =~ m/^(?:(.+)::)?(.+)$/;
-    return $package && $package->can($proc)
-        || $caller->can($proc);
+    $package ||= $caller;
+    my $code = do {
+        no strict 'refs';
+        my $stash = \%{ $package . '::' };
+        $stash && $stash->{$proc} && *{ $stash->{$proc} }{CODE};
+    };
+    return $code;
 }
 
 1;
