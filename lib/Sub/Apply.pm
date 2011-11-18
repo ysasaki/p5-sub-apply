@@ -6,8 +6,10 @@ use warnings;
 use parent 'Exporter';
 use Carp ();
 
-our $VERSION   = '0.03';
+our $VERSION   = '0.04';
 our @EXPORT_OK = qw(apply apply_if);
+
+our $WARNING = 0;
 
 sub apply {
     my $orig   = shift;
@@ -21,6 +23,7 @@ sub apply_if {
     my $orig   = shift;
     my $caller = caller;
     my $proc   = _find_proc( $caller, $orig );
+    Carp::carp "No such proc $orig" if $Sub::Apply::WARNING;
     return unless $proc;
     $proc->(@_);
 }
@@ -77,7 +80,9 @@ Apply @args to $procname. If you want to call function that not in current packa
 
 =head2 apply_if($procname, @args)
 
-Same as apply. but apply_if does not die unless $procname does not exist.
+Same as apply. But apply_if does not die unless $procname does not exist.
+
+You can set C<$Sub::Apply::WARNING=1> for debugging.
 
 =head1 WARNING
 

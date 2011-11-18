@@ -1,5 +1,8 @@
 Revision history for Perl extension Sub::Apply.
 
+0.04  Sat Nov 19 01:53:03 2011
+    - add $Sub::Apply::WARNING for debugging. (thanks to koji_magi)
+
 0.03  Thu Nov 17 23:47:22 2011
     - use symbol table to test subroutine existence. #2 (thanks to Vincent)
     - rename _proc to _find_proc.
