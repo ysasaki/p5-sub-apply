@@ -6,7 +6,7 @@ use warnings;
 use parent 'Exporter';
 use Carp ();
 
-our $VERSION   = '0.04';
+our $VERSION   = '0.05';
 our @EXPORT_OK = qw(apply apply_if);
 
 our $WARNING = 0;
@@ -23,8 +23,10 @@ sub apply_if {
     my $orig   = shift;
     my $caller = caller;
     my $proc   = _find_proc( $caller, $orig );
-    Carp::carp "No such proc $orig" if $Sub::Apply::WARNING;
-    return unless $proc;
+    unless ( $proc ) {
+        Carp::carp "No such proc $orig" if $WARNING;
+        return;
+    }
     $proc->(@_);
 }
 

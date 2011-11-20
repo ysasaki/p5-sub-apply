@@ -1,5 +1,8 @@
 Revision history for Perl extension Sub::Apply.
 
+0.05  Sun Nov 20 18:26:34 2011
+    - fix carp in apply_if.
+
 0.04  Sat Nov 19 01:53:03 2011
     - add $Sub::Apply::WARNING for debugging. (thanks to koji_magi)
 
