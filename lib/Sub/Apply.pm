@@ -66,19 +66,23 @@ Sub::Apply - apply arguments to proc.
 
 =head1 DESCRIPTION
 
-Sub::Apply provides function C<apply>. This function apply arguments to proc.
+Sub::Apply provides function C<apply> and C<apply_if>. This function apply arguments to proc.
+
+This module is designed for B<function call>. If you want to call B<class method> or B<instance method>, I recommend you to use C<UNIVERSAL#can>.
 
 =head1 EXPORT_OK
 
 apply, apply_if
 
-=head1 METHOD
+=head1 FUNCTION 
 
 =head2 apply($procname, @args)
 
 Apply @args to $procname. If you want to call function that not in current package, you do like below.
 
     apply('Foo::sum', 1, 2)
+
+This method looks up a function using symbol table and call it. But this function B<DOES NOT USE @ISA> to look up. This behavior is same as perl funciton call style.
 
 =head2 apply_if($procname, @args)
 
