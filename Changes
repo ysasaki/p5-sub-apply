@@ -1,5 +1,9 @@
 Revision history for Perl extension Sub::Apply.
 
+0.06  Mon Nov 21 00:56:37 2011
+    - improved documentation.
+    - add LICENSE attribute in Makefile.PL.
+
 0.05  Sun Nov 20 18:26:34 2011
     - fix carp in apply_if.
 
