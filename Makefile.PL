@@ -9,6 +9,7 @@ WriteMakefile(
     ABSTRACT_FROM    => 'lib/Sub/Apply.pm',
     MIN_PERL_VERSION => 5.008008,
     AUTHOR           => 'Yoshihiro Sasaki <ysasaki at cpan.org>',
+    LICENSE          => 'perl',
     META_MERGE       => {
         resources => {
             license    => 'http://dev.perl.org/licenses/',
